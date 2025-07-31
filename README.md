@@ -4,7 +4,7 @@ A citizen science application that enables users to log marine animal sightings 
 
 ![App Screenshot](/public/images/screenshot.png)
 
-## Features
+## Features 🦈
 
 -  User authentication system (JWT)
 -  Interactive map with sighting markers
@@ -13,21 +13,23 @@ A citizen science application that enables users to log marine animal sightings 
 -  Location validation for sightings
 -  NOAA API integration for species data
 
-## Tech Stack
+## Tech Stack 🐢
 
 **Backend:**
 - Node.js
 - Express.js
 - MongoDB (Mongoose ODM)
 - JWT Authentication
-- (Image storage)
+- Artillery
+- Cloudinary (Image storage)
 
 **Frontend:**
 - CSS Styling
+- HTML
 - JSX
 
 
-## API Routes
+## API Routes 🦭
 
 ### Authentication Routes
 
@@ -54,7 +56,7 @@ A citizen science application that enables users to log marine animal sightings 
 | GET    | /species        | List all species           | No            |
 | GET    | /species/:id    | Show species details       | No            |
 
-### API Endpoints
+### API Endpoints 
 
 | Method | Endpoint        | Description                | Auth Required |
 |--------|-----------------|----------------------------|---------------|
@@ -62,7 +64,7 @@ A citizen science application that enables users to log marine animal sightings 
 | POST   | /api/sightings  | Create new sighting        | Yes (JWT)     |
 | GET    | /api/sightings  | Get all sightings data     | No            |
 
-## Installation
+## Installation 🐬
 
 1. Clone the repository:
    ```bash
@@ -94,7 +96,7 @@ A citizen science application that enables users to log marine animal sightings 
    http://localhost:3000
    ```
 
-## Testing
+## Testing 🐡
 
 To run the test suite:
 ```bash
@@ -106,7 +108,7 @@ This will execute:
 - API endpoint tests
 - Authentication tests
 
-## Environment Variables
+## Environment Variables 🦀
 
 The following environment variables are required:
 
@@ -118,7 +120,7 @@ The following environment variables are required:
 | CLOUDINARY_API_KEY      | Cloudinary API key                   |
 | CLOUDINARY_API_SECRET   | Cloudinary API secret                |
 
-## Contact
+## Contact 🦑
 
 Project Maintainer - [Your Name](mailto:your.email@example.com)
 
