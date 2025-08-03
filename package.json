@@ -1,0 +1,40 @@
+{
+  "name": "ocean-wildlife-tracker",
+  "version": "1.0.0",
+  "description": "A citizen science application that enables users to log marine animal sightings to support conservation efforts. Built with Express.js, and MongoDB.",
+  "main": "app.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Zahraa-06/Ocean-Wildlife-Tracker.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Zahraa-06/Ocean-Wildlife-Tracker/issues"
+  },
+  "homepage": "https://github.com/Zahraa-06/Ocean-Wildlife-Tracker#readme",
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "dotenv": "^17.2.1",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "jsx-view-engine": "^1.0.0",
+    "method-override": "^3.0.0",
+    "mongoose": "^8.17.0",
+    "morgan": "^1.10.1"
+  },
+  "devDependencies": {
+    "artillery": "^1.7.9",
+    "jest": "^30.0.5",
+    "mongodb-memory-server": "^10.1.4",
+    "supertest": "^7.1.4"
+  }
+}
