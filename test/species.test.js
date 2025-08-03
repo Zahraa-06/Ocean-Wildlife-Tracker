@@ -4,7 +4,7 @@ const { MongoMemoryServer } = require('mongodb-memory-server')
 const app = require('../app')
 const server = app.listen(8081, () => console.log('Testing Fruits on PORT 8081'))
 const User = require('../models/user')
-const Fruit = require('../models/fruit')
+const Species = require('../models/species')
 let mongoServer
 
 beforeAll(async () => {
@@ -20,7 +20,7 @@ afterAll(async () => {
 
 afterEach(async () => {
   await User.deleteMany({})
-  await Fruit.deleteMany({})
+  await Species.deleteMany({})
 })
 
 describe('Fruit API Tests', () => {

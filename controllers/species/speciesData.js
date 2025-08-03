@@ -4,7 +4,7 @@ const dataController = {}
 
 dataController.index = async (req,res,next) => {
    try{
-    const user = await req.user.populate('species')
+    const user = await req.user
     res.locals.data.species =  user.species
     next()
   } catch(error){

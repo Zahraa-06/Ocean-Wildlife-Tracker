@@ -5,7 +5,7 @@ const dataController = require('./sightingsData.js')
 const authDataController = require('../auth/authData.js')
 
 // Index
-router.get('/', authDataController.auth, dataController.index, viewController.index)
+router.get('/', authDataController.auth, dataController.index, viewController.index) //Add authDataController.auth first
 
 // New
 router.get('/new', authDataController.auth, viewController.newView )

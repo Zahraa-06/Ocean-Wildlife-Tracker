@@ -10,7 +10,9 @@ function Index (props){
         <ul>
         {
             sightings.map((sighting) => {
-                return (<li>this is the <a href={`/sightings/${sighting.id}?token=${props.token}`}>{sighting.name}</a>of the color {sighting.color}</li>)
+                return (<li>this is the <a href={`/sightings/${sighting.id}?token=${props.token}`}>{sighting.species}</a>
+                and its location is {sighting.location}. The time stamp is {sighting.timestamp}. This is the photo URL {sighting.photoUrl}.
+                This is reported by {sighting.reportedBy}. Some notes are {sighting.notes}.</li>)
             })
         }
         </ul>

@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
-const dataController = require('./dataController')
-const viewController = require('./viewController')
+const dataController = require('./authData')
+const viewController = require('./authViews')
 const sightingsViewController = require('../sightings/sightingsViews')
 
 router.post('/', dataController.createUser, viewController.redirectToLogin)

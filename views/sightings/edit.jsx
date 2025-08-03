@@ -5,8 +5,8 @@ function Edit (props) {
     return(
         <div>
             <h1>{species} Edit Page</h1>
-            <a href='/fruits'>Go back to Index Page</a>
-            <form action={`/fruits/${_id}?_method=PUT&token=${props.token}`} method="POST">
+            <a href='/sightings'>Go back to Index Page</a>
+            <form action={`/sightings/${_id}?_method=PUT&token=${props.token}`} method="POST">
                 {/* Species: <input type="text" name="species" defaultValue={species} /><br/> */}
                 Location: <input type="text" name="location" defaultValue={location} /><br/>
                 {/* Time Stamp: <input type="text" name="location" defaultValue={location} /><br/> */}

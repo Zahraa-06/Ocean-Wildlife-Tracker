@@ -2,8 +2,9 @@ const express = require('express')
 const morgan = require('morgan')
 const jsxEngine = require('jsx-view-engine')
 const methodOverride = require('method-override')
-const userRoutes = require('./controller/auth/routeController')
-const fruitsRouter = require('./controller/fruits/routeController')
+const userRoutes = require('./controllers/auth/authRoutes')
+const sightingsRouter = require('./controllers/sightings/sightingsRoute')
+const speciesRouter = require('./controllers/species/speciesRoutes')
 const apiRouter = require('./routes/apiRoutes')
 const app = express()
 
@@ -20,7 +21,8 @@ app.use((req, res, next) => {
 app.use(express.static('public'))
 app.use(morgan('dev'))
 app.use('/users', userRoutes)
-app.use('/fruits', fruitsRouter)
+app.use('/sightings', sightingsRouter)
+app.use('/species', speciesRouter)
 app.use('/api', apiRouter)
 
 module.exports = app

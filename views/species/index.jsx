@@ -1,15 +1,17 @@
 const React = require('react')
 
 function Index (props){
-    const fruits = props.fruits
+    const species = props.species
     return (
         <div>
         <h1>Index page</h1>
-        <a href={`/fruits/new?token=${props.token}`}>Create A New Fruit</a>
+        <a href={`/species/new?token=${props.token}`}>Create A New Species</a>
         <ul>
         {
-            fruits.map((fruit) => {
-                return (<li>this is the <a href={`/fruits/${fruit.id}?token=${props.token}`}>{fruit.name}</a>of the color {fruit.color}</li>)
+            species.map((species) => {
+                return (<li>this is <a href={`/species/${species.id}?token=${props.token}`}>{species.name}</a>with the scientific name of 
+                {species.scientificName}, its conservation status is {species.conservationStatus}. The description is {species.description}.
+                The {species.name}'s habitat is {species.habitat} and this is its image url {species.imageUrl}.</li>)
             })
         }
         </ul>

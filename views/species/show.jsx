@@ -7,17 +7,19 @@ const styles = {
 function Show(props){
     return(
         <div style={styles}>
-            <h1>{props.fruit.name}</h1>
-            <a href={`/fruits/?token=${props.token}`}>Go back to Index Page</a>
+            <h1>{props.species.name}</h1>
+            <a href={`/species/?token=${props.token}`}>Go back to Index Page</a>
             <p>
-                The {props.fruit.name} is {props.fruit.color} and 
-                {props.fruit.readyToEat? 'It is ready to eat': 'It is not ready to eat'}
+                The {props.species.name}'s scientific name is {props.species.scientificName} and its 
+                conservation status is {props.species.conservationStatus}. This is the {props.species.name}'s 
+                description {props.species.description}. Its habitat is {props.species.habitat} and this is its image URL 
+                {props.species.imageUrl}
             </p>
-              <form action={`/fruits/${props.fruit._id}?_method=DELETE&token=${props.token}`} method="POST">
-                <input type="submit" value={`Delete this ${props.fruit.name}`}/>
+              <form action={`/species/${props.species._id}?_method=DELETE&token=${props.token}`} method="POST">
+                <input type="submit" value={`Delete this ${props.species.name}`}/>
             </form>
             <div>
-            <a href={`/fruits/${props.fruit._id}/edit?token=${props.token}`}><button>{`Edit this ${props.fruit.name}`}</button></a>
+            <a href={`/species/${props.species._id}/edit?token=${props.token}`}><button>{`Edit this ${props.species.name}`}</button></a>
             </div>
         </div>
     )
