@@ -2,14 +2,24 @@ const Species = require('../../models/species.js')
 
 const dataController = {}
 
-dataController.index = async (req,res,next) => {
-   try{
-    const user = await req.user
-    res.locals.data.species =  user.species
-    next()
-  } catch(error){
-    res.status(400).send({ message: error.message })
-  }
+// dataController.index = async (req,res,next) => {
+//    try{
+//     const user = await req.user
+//     res.locals.data.species =  
+//     next()
+//   } catch(error){
+//     res.status(400).send({ message: error.message })
+//   }
+// }
+
+dataController.getAll = async (req, res, next) => {
+    try {
+        const allSpecies = await Species.find({})
+        res.locals.data.species = allSpecies
+        next()
+    } catch (error) {
+        res.status(400).send({ message: error.message })
+    }
 }
 
 dataController.destroy = async (req,res,next) => {
@@ -33,11 +43,10 @@ dataController.update = async (req,res,next) => {
 }
 
 dataController.create = async (req,res,next) => {
-   
     try {
+        req.body.reportedBy = req.user._id
+        console.log()
         res.locals.data.species = await Species.create(req.body)
-        req.user.species.addToSet({_id: res.locals.data.species._id})
-        await req.user.save()
         next()
     } catch(error) {
         res.status(400).send({ message: error.message })

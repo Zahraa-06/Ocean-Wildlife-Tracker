@@ -15,7 +15,10 @@ const viewController = {
     res.render('sightings/Show', res.locals.data)
   },
   edit(req, res, next){
-    res.render('sightings/Edit', res.locals.data)
+    res.render('sightings/Edit', {
+      ...res.locals.data,
+      user: req.user
+    })
   },
   newView(req, res, next){
     res.render('sightings/New', res.locals.data)

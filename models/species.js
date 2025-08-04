@@ -5,7 +5,7 @@ const speciesSchema = new mongoose.Schema({
   scientificName: String,
   conservationStatus: {
     type: String,
-    enum: ['LC', 'NT', 'VU', 'EN', 'CR', 'EW', 'EX'],
+    enum: ['LC', 'NT', 'VU', 'EN', 'CR', 'EW', 'EX', 'DD'],
     default: 'LC'
   },
   description: String,

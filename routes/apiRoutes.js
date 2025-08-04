@@ -21,7 +21,7 @@ router.put('/sightings/:id', userApiController.auth, sightingDataController.upda
 router.delete('/sightings/:id', userApiController.auth, sightingDataController.destroy, sightingApiController.destroy)
 
 // Species API Routes
-router.get('/species', userApiController.auth, speciesDataController.index, speciesApiController.index)
+router.get('/species', userApiController.auth, speciesApiController.index)
 router.get('/species/:id', userApiController.auth, speciesDataController.show, speciesApiController.show)
 router.post('/species', userApiController.auth, speciesDataController.create, speciesApiController.create)
 router.put('/species/:id', userApiController.auth, speciesDataController.update, speciesApiController.show)

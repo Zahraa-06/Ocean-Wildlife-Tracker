@@ -5,7 +5,9 @@ function Index (props){
     return (
         <div>
         <h1>Index page</h1>
-        <a href={`/species/new?token=${props.token}`}>Create A New Species</a>
+        <a href={`/sightings/?token=${props.token}`}>Sightings Index Page</a><br/>
+        <a href={`/species/new?token=${props.token}`}>Create A New Species</a><br/>
+        <a href={`/sightings/new?token=${props.token}`}>Create A New Sighting</a><br/>
         <ul>
         {
             species.map((species) => {

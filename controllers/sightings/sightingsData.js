@@ -4,8 +4,8 @@ const dataController = {}
 
 dataController.index = async (req,res,next) => {
    try{
-    const user = await req.user.populate('sightings')
-    res.locals.data.sightings =  user.sightings
+    res.locals.data.sightings = await Sighting.find({}).populate('species reportedBy')
+    res.locals.data.token = req.query.token
     next()
   } catch(error){
     res.status(400).send({ message: error.message })
@@ -43,6 +43,8 @@ dataController.create = async (req,res,next) => {
         req.body.verified = false;
     }
     try {
+        req.body.reportedBy = req.user._id
+        console.log()
         res.locals.data.sighting = await Sighting.create(req.body)
         req.user.sightings.addToSet({_id: res.locals.data.sighting._id})
         await req.user.save()
@@ -54,7 +56,8 @@ dataController.create = async (req,res,next) => {
 
 dataController.show = async (req,res,next) => {
     try {
-        res.locals.data.sighting = await Sighting.findById(req.params.id)
+        res.locals.data.sighting = await Sighting.findById(req.params.id).populate('species reportedBy')
+        res.locals.data.token = req.query.token
         if(!res.locals.data.sighting){
             throw new error (`Could not locate a sighting with the id ${req.params.id}`)
         }
