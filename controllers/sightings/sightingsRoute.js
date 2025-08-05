@@ -12,10 +12,7 @@ router.get('/', authDataController.auth, dataController.index, viewController.in
 router.get('/all', authDataController.auth, dataController.indexAll, viewController.index) 
 
 // New
-router.get('/new', authDataController.auth, speciesData.getAll, (req, res, next) =>{
-console.log(res.locals.data)
-next()
-}, viewController.newView )
+router.get('/new', authDataController.auth, speciesData.getAll, viewController.newView )
 
 // Delete
 router.delete('/:id', authDataController.auth, dataController.destroy, viewController.redirectHome)
