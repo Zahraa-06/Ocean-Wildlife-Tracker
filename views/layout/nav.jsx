@@ -6,7 +6,8 @@ function Nav(props){
     {
         props.token ?
         <>
-    <a href={`/sightings/?token=${props.token}`}>Index Sightings Page</a>
+    <a href={`/sightings/all/?token=${props.token}`}>All Sightings</a>
+    <a href={`/sightings/?token=${props.token}`}>My Sightings</a>
     <a href={`/species/?token=${props.token}`}>Index Species Page</a>
     <a href={`/sightings/new?token=${props.token}`}>Create A New Sighting</a>
     <a href={`/species/new?token=${props.token}`}>Create A New Species</a>

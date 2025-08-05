@@ -6,7 +6,10 @@ const speciesData = require ('../species/speciesData.js')
 const authDataController = require('../auth/authData.js')
 
 // Index
-router.get('/', authDataController.auth, dataController.index, viewController.index) //Add authDataController.auth first
+router.get('/', authDataController.auth, dataController.index, viewController.index) 
+
+//Index All
+router.get('/all', authDataController.auth, dataController.indexAll, viewController.index) 
 
 // New
 router.get('/new', authDataController.auth, speciesData.getAll, (req, res, next) =>{

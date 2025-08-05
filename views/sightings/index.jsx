@@ -3,13 +3,11 @@ const Layout = require('../layout/layout')
 
 function Index (props){
     const sightings = props.sightings
+    console.log(sightings)
     return (
          <Layout token={props.token}>
             <div>
-                <h1>Index page</h1>
-                {/* <a href={`/sightings/new?token=${props.token}`}>Create A New Sighting</a><br/>
-                <a href={`/species/new?token=${props.token}`}>Create A New Species</a><br/>
-                <a href={`/species/?token=${props.token}`}>Index Species Page</a> */}
+                <h1>Index page</h1> 
                 <ul>
                 {
                     sightings.map((sighting) => {

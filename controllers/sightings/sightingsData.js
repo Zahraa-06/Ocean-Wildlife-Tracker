@@ -1,11 +1,26 @@
 const Sighting = require('../../models/sightings.js')
+const User = require('../../models/user.js')
 
 const dataController = {}
 
 dataController.index = async (req,res,next) => {
    try{
-    res.locals.data.sightings = await Sighting.find({}).populate('species reportedBy')
+    const user = await req.user.populate({
+        path: 'sightings',
+        populate: {path:'species'}
+    })
+    res.locals.data.sightings = user.sightings
     res.locals.data.token = req.query.token
+    next()
+  } catch(error){
+    res.status(400).send({ message: error.message })
+  }
+}
+
+dataController.indexAll = async (req,res,next) => {
+   try{
+    const sightings = await Sighting.find({}).populate('species reportedBy')
+    res.locals.data.sightings = sightings
     next()
   } catch(error){
     res.status(400).send({ message: error.message })
