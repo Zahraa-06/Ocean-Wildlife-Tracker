@@ -3,7 +3,7 @@ const Layout = require('../layout/layout')
 
 function Show(props){
     return(
-        <Layout species={props.species}>
+        <Layout species={props.species} token={props.token}>
             <div>
                 <h1>{props.species.name}</h1>
                 <a href={`/species/?token=${props.token}`}>Go back to Index Page</a>

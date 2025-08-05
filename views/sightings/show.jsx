@@ -3,7 +3,7 @@ const Layout = require('../layout/layout')
 
 function Show(props){
     return(
-        <Layout sighting={props.sighting}>
+        <Layout sighting={props.sighting} token={props.token}>
             <div>
                 <h1>{props.sighting.species.name}</h1>
                 <a href={`/sightings/?token=${props.token}`}>Go back to Index Page</a>

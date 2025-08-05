@@ -4,10 +4,10 @@ const Layout = require('../layout/layout')
 function Edit (props) {
     const { name, _id, scientificName, conservationStatus, description, habitat, imageUrl} = props.species
     return(
-        <Layout species={props.species}>
+        <Layout species={props.species} token={props.token}>
             <div>
                 <h1>{name} Edit Page</h1>
-                <a href='/species'>Go back to Index Page</a>
+                <a href={`/species/?token=${props.token}`}>Go back to Index Page</a>
                 <form action={`/species/${_id}?_method=PUT&token=${props.token}`} method="POST">
                     Name: <input type="text" name="name" defaultValue={name} /><br/>
                     Scientific Name: <input type="text" name="scientificName" defaultValue={scientificName} /><br/>

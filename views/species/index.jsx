@@ -4,7 +4,7 @@ const Layout = require('../layout/layout')
 function Index (props){
     const species = props.species
     return (
-        <Layout>
+        <Layout token={props.token}>
         <div>
         <h1>Index page</h1>
         <a href={`/sightings/?token=${props.token}`}>Sightings Index Page</a><br/>

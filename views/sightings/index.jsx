@@ -4,7 +4,7 @@ const Layout = require('../layout/layout')
 function Index (props){
     const sightings = props.sightings
     return (
-         <Layout>
+         <Layout token={props.token}>
             <div>
                 <h1>Index page</h1>
                 <a href={`/sightings/new?token=${props.token}`}>Create A New Sighting</a><br/>

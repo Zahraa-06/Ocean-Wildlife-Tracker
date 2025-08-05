@@ -3,7 +3,7 @@ const Layout = require('../layout/layout')
 
 function New (props) {
     return(
-         <Layout>
+         <Layout token={props.token}>
             <div>
                 <h1>New Sighting Page</h1>
                 <a href={`/sightings?token=${props.token}`}>Go back to Sightings Index Page</a><br/>

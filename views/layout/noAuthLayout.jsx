@@ -1,7 +1,7 @@
 const React = require('react')
-const Nav = require('./nav')
+const Nav = require ('./nav')
 
-function Layout(props){
+function Layout2(props){
  return(
     <html>
         <head>
@@ -11,7 +11,7 @@ function Layout(props){
         </head>
         <body>
             <div className="container">
-            <Nav token={props.token}/>
+            <Nav/> 
                 {props.children}
             </div>
         </body>
@@ -19,4 +19,4 @@ function Layout(props){
  )
 }
 
-module.exports = Layout
+module.exports = Layout2
