@@ -6,8 +6,8 @@ function New (props) {
         <Layout token={props.token}>
             <div>
                 <h1>New Species Page</h1>
-                <a href={`/species?token=${props.token}`}>Go back to Species Index Page</a><br/>
-                <a href={`/sightings?token=${props.token}`}>Go back to Sightings Index Page</a><br/>
+                {/* <a href={`/species?token=${props.token}`}>Go back to Species Index Page</a><br/>
+                <a href={`/sightings?token=${props.token}`}>Go back to Sightings Index Page</a><br/> */}
                 <form action={`/species?token=${props.token}`} method="POST">
                     Name: <input type="text" name="name" /><br/>
                     Scientific Name: <input type="text" name="scientificName" /><br/>

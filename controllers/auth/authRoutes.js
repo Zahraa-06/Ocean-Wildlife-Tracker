@@ -10,5 +10,6 @@ router.post('/login', dataController.loginUser, sightingsViewController.redirect
 router.get('/login', viewController.signIn)
 router.put('/:id', dataController.updateUser)
 router.delete('/:id', dataController.auth, dataController.deleteUser)
+router.post('/logout', dataController.logout, viewController.redirectToSignUp)
 
 module.exports = router

@@ -10,6 +10,9 @@ const viewController = {
   },
   redirectToLogin(req, res, next){
     res.redirect('/users/login')
+  },
+  redirectToSignUp(req, res, next){
+    res.redirect('/users')
   }
 } 
 

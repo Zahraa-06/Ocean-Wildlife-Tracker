@@ -6,7 +6,7 @@ function Show(props){
         <Layout species={props.species} token={props.token}>
             <div>
                 <h1>{props.species.name}</h1>
-                <a href={`/species/?token=${props.token}`}>Go back to Index Page</a>
+                {/* <a href={`/species/?token=${props.token}`}>Go back to Index Page</a> */}
                 <p>
                     The {props.species.name}'s scientific name is {props.species.scientificName} and its 
                     conservation status is {props.species.conservationStatus}. This is the {props.species.name}'s 

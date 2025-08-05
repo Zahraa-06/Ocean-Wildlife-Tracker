@@ -7,9 +7,9 @@ function Index (props){
          <Layout token={props.token}>
             <div>
                 <h1>Index page</h1>
-                <a href={`/sightings/new?token=${props.token}`}>Create A New Sighting</a><br/>
+                {/* <a href={`/sightings/new?token=${props.token}`}>Create A New Sighting</a><br/>
                 <a href={`/species/new?token=${props.token}`}>Create A New Species</a><br/>
-                <a href={`/species/?token=${props.token}`}>Index Species Page</a>
+                <a href={`/species/?token=${props.token}`}>Index Species Page</a> */}
                 <ul>
                 {
                     sightings.map((sighting) => {

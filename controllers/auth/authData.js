@@ -76,3 +76,9 @@ exports.deleteUser = async (req, res) => {
     res.status(400).json({message: error.message})
   }
 }
+
+exports.logout = (req, res, next) => {
+  res.locals.data.token = null
+  res.user = null
+  next()
+}
