@@ -3,7 +3,6 @@ const Layout = require('../layout/layout')
 
 function Index (props){
     const sightings = props.sightings
-    console.log(sightings)
     return (
          <Layout token={props.token}>
             <div>
