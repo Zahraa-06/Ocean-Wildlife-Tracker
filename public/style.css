@@ -79,7 +79,7 @@ input[type="checkbox"] {
 }
 
 /* Buttons */
-input[type="submit"], button, #species-select {
+input[type="submit"], button, #species-select{
     display: inline-block;
     padding: 12px 24px;
     border: none;
@@ -93,7 +93,22 @@ input[type="submit"], button, #species-select {
     transition: all 0.3s ease;
 }
 
-.btn-primary {
+ .click {
+    background-color: lightgrey;
+    display: inline-block;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #5f9fd3;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    margin: 0.5rem;
+    transition: all 0.3s ease;
+ }
+
+/* .btn-primary {
     background: #27ae60;
     color: white;
 }
@@ -121,7 +136,7 @@ input[type="submit"], button, #species-select {
 .btn-danger:hover {
     background: #c0392b;
     transform: translateY(-2px);
-}
+} */
 
 .headerNav {
     display: flex;
@@ -131,7 +146,7 @@ input[type="submit"], button, #species-select {
 .headerNav a {
     text-decoration: none;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
 }
 
 .headerNav a:hover {
