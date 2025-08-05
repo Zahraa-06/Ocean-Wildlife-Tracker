@@ -1,8 +1,10 @@
 const React = require('react')
+const Layout = require('../layout/layout')
 
 function Index (props){
     const species = props.species
     return (
+        <Layout>
         <div>
         <h1>Index page</h1>
         <a href={`/sightings/?token=${props.token}`}>Sightings Index Page</a><br/>
@@ -18,6 +20,7 @@ function Index (props){
         }
         </ul>
         </div>
+        </Layout>
     )
 }
 
