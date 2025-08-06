@@ -2,7 +2,7 @@ const React = require('react')
 const Layout = require('../layout/layout')
 
 function Edit(props) {
-    const { species, _id, location, timestamp, photoUrl, reportedBy, notes, verified } = props.sighting
+    const { species, _id, location, photoUrl, notes, verified } = props.sighting
     return (
         <Layout sightings={props.sighting} token={props.token}>
             <div>
@@ -10,7 +10,7 @@ function Edit(props) {
                 <form action={`/sightings/${_id}?_method=PUT&token=${props.token}`} method="POST">
                     <label for="species-select">Choose a species:</label>
                     <select name="species" id="species-select">
-                        <option value={species._id}>{species.name} Previous Selection</option>
+                        <option value={species._id}>Previous {species.name}</option>
                         {
                             props.species.map((sp) => {
                                 return (<option value={sp._id}>{sp.name}</option>)

@@ -11,6 +11,6 @@ const speciesSchema = new mongoose.Schema({
   description: String,
   habitat: [String],
   imageUrl: String
-});
+})
 
 module.exports = mongoose.model('Species', speciesSchema)

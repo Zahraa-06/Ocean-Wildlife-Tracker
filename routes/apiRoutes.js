@@ -6,21 +6,18 @@ const sightingDataController = require('../controllers/sightings/sightingsData')
 const speciesApiController = require('../controllers/species/speciesApi')
 const speciesDataController = require('../controllers/species/speciesData')
 
-// User API Routes
 router.post('/users', userApiController.createUser)
 router.post('/users/login', userApiController.loginUser)
 router.get('/users/profile', userApiController.auth, userApiController.getProfile)
 router.put('/users/:id', userApiController.auth, userApiController.updateUser)
 router.delete('/users/:id', userApiController.auth, userApiController.deleteUser)
 
-// Sightings API Routes
 router.get('/sightings', userApiController.auth, sightingDataController.index, sightingApiController.index)
 router.get('/sightings/:id', userApiController.auth, sightingDataController.show, sightingApiController.show)
 router.post('/sightings', userApiController.auth, sightingDataController.create, sightingApiController.create)
 router.put('/sightings/:id', userApiController.auth, sightingDataController.update, sightingApiController.show)
 router.delete('/sightings/:id', userApiController.auth, sightingDataController.destroy, sightingApiController.destroy)
 
-// Species API Routes
 router.get('/species', userApiController.auth, speciesApiController.index)
 router.get('/species/:id', userApiController.auth, speciesDataController.show, speciesApiController.show)
 router.post('/species', userApiController.auth, speciesDataController.create, speciesApiController.create)

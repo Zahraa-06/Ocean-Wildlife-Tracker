@@ -6,19 +6,22 @@ function Show(props) {
         <Layout sighting={props.sighting} token={props.token}>
             <div>
                 <h1>{props.sighting.species.name}</h1>
-                {/* <a href={`/sightings/?token=${props.token}`}>Go back to Index Page</a> */}
                 <p>
-                    The {props.sighting.species.name}, its location is {props.sighting.location}, the time stamp is {props.sighting.createdAt.toString()}.
-                    The photo url is {props.sighting.photoUrl}, its reported by {props.sighting.reportedBy.name}. Some notes are {props.sighting.notes}
-                    and {props.sighting.verified ? 'It is verified' : 'It is not verified'}
+                    • The species is {props.sighting.species.name}.<br />
+                    • Located in {props.sighting.location}.<br />
+                    • Recorded at {props.sighting.createdAt.toString()}.<br />
+                    • Click here to see the photo {props.sighting.photoUrl}.<br />
+                    • This was reported by {props.sighting.reportedBy.name}.<br />
+                    • A note: {props.sighting.notes}.<br />
+                    • The sighting is {props.sighting.verified ? 'verified' : 'not verified'}.<br />
                 </p>
                 <div className='btn'>
                     <a href={`/sightings/${props.sighting._id}/edit?token=${props.token}`}><button>{`Edit this ${props.sighting.species.name}`}</button></a>
-                    <form  className='delete-btn' action={`/sightings/${props.sighting._id}?_method=DELETE&token=${props.token}`} method="POST">
+                    <form className='delete-btn' action={`/sightings/${props.sighting._id}?_method=DELETE&token=${props.token}`} method="POST">
                         <input type="submit" value={`Delete this ${props.sighting.species.name}`} />
                     </form>
-                    </div>
                 </div>
+            </div>
         </Layout>
     )
 }

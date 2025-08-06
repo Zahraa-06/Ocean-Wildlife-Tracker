@@ -8,7 +8,6 @@ const viewController = {
     res.render('/auth/SignIn')
   },
   index(req, res, next) {
-    console.log(res.locals.data)
     res.render('species/Index', res.locals.data)
   },
   show(req, res, next) {

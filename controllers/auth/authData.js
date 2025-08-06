@@ -2,9 +2,6 @@ const User = require('../../models/user')
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 
-// instead of creating an object we can use the exports object directly
-// this is how
-
 exports.auth = async (req, res, next) => {
   try {
     let token

@@ -1,6 +1,4 @@
 const Sighting = require('../../models/sightings.js')
-const User = require('../../models/user.js')
-
 const dataController = {}
 
 dataController.index = async (req, res, next) => {
@@ -63,7 +61,6 @@ dataController.create = async (req, res, next) => {
     }
     try {
         req.body.reportedBy = req.user._id
-        console.log()
         res.locals.data.sighting = await Sighting.create(req.body)
         req.user.sightings.addToSet({ _id: res.locals.data.sighting._id })
         await req.user.save()
