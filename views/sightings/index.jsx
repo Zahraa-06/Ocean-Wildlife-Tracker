@@ -4,6 +4,7 @@ const Layout = require('../layout/layout')
 function Index (props){
     const sightings = props.sightings
     return (
+        
          <Layout token={props.token}>
             <div>
                 <h1>Index page</h1> 

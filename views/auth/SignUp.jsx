@@ -5,7 +5,7 @@ function SignUp (props) {
     return(
         <Layout2>
             <div>
-                <h1>Sign Up For The Greatest Of All Time</h1>
+                <h1>Sign Up</h1>
                 <form action="/users" method="POST">
                     Name: <input type="text" name="name" /><br/>
                     Email: <input type="email" name="email" /><br/>

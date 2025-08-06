@@ -5,7 +5,7 @@ function SignIn (props) {
     return(
         <Layout2>
             <div>
-                <h1>Log In For The Greatest Of All Time</h1>
+                <h1>Log In</h1>
                 <form action="/users/login" method="POST">
                     Email: <input type="email" name="email" /><br/>
                     Password: <input type="password" name="password" /><br/>

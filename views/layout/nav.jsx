@@ -6,14 +6,14 @@ function Nav(props){
     {
         props.token ?
         <>
-    <a className='click' href={`/sightings/all/?token=${props.token}`}>All Sightings</a>
+    <a className='click' href={`/sightings/all/?token=${props.token}`}>Sightings Main</a>
     <a className='click' href={`/sightings/?token=${props.token}`}>My Sightings</a>
-    <a className='click' href={`/species/?token=${props.token}`}>Index Species Page</a>
-    <a className='click' href={`/sightings/new?token=${props.token}`}>Create A New Sighting</a>
-    <a className='click' href={`/species/new?token=${props.token}`}>Create A New Species</a>
-    <form action={`/users/logout`} method="POST">
-    <input type="submit" defaultValue='Log Out'/>
-    </form>
+    <a className='click' href={`/species/?token=${props.token}`}>Species Main</a>
+    <a className='click' href={`/sightings/new?token=${props.token}`}>New Sighting</a>
+    <a className='click' href={`/species/new?token=${props.token}`}>New Species</a>
+    <form action="/users/logout" method="POST">
+  <button type="submit" className="click logout-btn">Log Out</button>
+</form>
     </>
     :
     <>

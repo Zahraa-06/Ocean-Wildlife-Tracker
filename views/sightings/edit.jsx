@@ -6,7 +6,7 @@ function Edit (props) {
     return(
         <Layout sightings={props.sighting} token={props.token}>
             <div>
-                <h1>{species.name}'s Sightings Edit Page</h1>
+                <h1>Edit Sighting of {species.name}</h1>
                 {/* <a href={`/sightings/?token=${props.token}`}>Go back to Index Page</a> */}
                 <form action={`/sightings/${_id}?_method=PUT&token=${props.token}`} method="POST">
                 <label for="species-select">Choose a species:</label>
