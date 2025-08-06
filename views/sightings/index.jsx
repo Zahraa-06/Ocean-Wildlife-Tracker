@@ -15,7 +15,7 @@ function Index(props) {
                                 • The species is <a className='atag' href={`/sightings/${sighting.id}?token=${props.token}`}>{sighting.species.name}</a>.<br />
                                 • Located in {sighting.location}.<br />
                                 • Recorded at {sighting.createdAt.toString()}.<br />
-                                • Click here to see the photo {sighting.photoUrl}.<br />
+                                • The link to see the photo {sighting.photoUrl}.<br />
                                 • This was reported by {sighting.reportedBy.name}.<br />
                                 • A note: {sighting.notes}.<br /></li>)
                         })
