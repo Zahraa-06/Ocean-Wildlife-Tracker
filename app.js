@@ -1,4 +1,5 @@
 const express = require('express')
+const multer = require('multer')
 const morgan = require('morgan')
 const jsxEngine = require('jsx-view-engine')
 const methodOverride = require('method-override')
@@ -7,6 +8,19 @@ const sightingsRouter = require('./controllers/sightings/sightingsRoute')
 const speciesRouter = require('./controllers/species/speciesRoutes')
 const apiRouter = require('./routes/apiRoutes')
 const app = express()
+
+const storage = multer.diskStorage({
+    destination: (req, file, cb) => {
+        cb(null, 'uploads/')
+    },
+    filename: (req, file, cb) => {
+        cb(null, file.originalname)
+    }
+})
+const upload = multer({ storage })
+app.post('/upload', upload.single('file'), (req, res) => {
+    res.send('File uploaded successfully')
+})
 
 app.set('view engine', 'jsx')
 app.engine('jsx', jsxEngine())
