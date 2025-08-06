@@ -11,7 +11,7 @@ function Index(props) {
                     {
                         species.map((species) => {
                             return (<li>
-                                • The species' name is <a href={`/species/${species.id}?token=${props.token}`}>{species.name}</a>.<br />
+                                • The species' name is <a className='atag' href={`/species/${species.id}?token=${props.token}`}>{species.name}</a>.<br />
                                 • The scientific name is {species.scientificName}.<br />
                                 • The conservation status is {species.conservationStatus}.<br />
                                 • A description of the species: {species.description}.<br />

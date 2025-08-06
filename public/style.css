@@ -7,7 +7,8 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
-    color: #5f9fd3;
+    font-weight: bold;
+    color: #084b81;
     background: url('/ocean.png') no-repeat center center fixed;
     background-size: cover;
     min-height: 100vh;
@@ -36,7 +37,8 @@ input[type="password"],
 select,
 textarea {
     background-color: #fffffa;
-    color: #5f9fd3;
+    color: #084b81;
+    font-weight: bold;
     width: 100%;
     padding: 12px 16px;
     border: 2px solid #a8cfe8e2;
@@ -86,13 +88,13 @@ input[type="checkbox"] {
     cursor: pointer;
     margin: 0.5rem;
     transition: all 0.3s ease;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 }
 
 .headerNav a {
     background-color: #fffffa;
     display: inline-block;
     padding: 8px 20px;
-    border: none;
     border-radius: 8px;
     font-size: 1rem;
     color: #5f9fd3;
@@ -101,13 +103,14 @@ input[type="checkbox"] {
     cursor: pointer;
     margin: 0.5rem;
     transition: all 0.3s ease;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 }
 
 .headerNav a:hover,
 .headerNav button:hover,
 .headerNav input[type="submit"]:hover {
     background-color: #5f9fd3;
-    color: ##fffffa;
+    color: #fffffa;
     transform: translateY(-2px);
 }
 
@@ -130,6 +133,7 @@ button {
     cursor: pointer;
     margin: 0.5rem;
     transition: all 0.3s ease;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 }
 
 .click:hover,
@@ -193,4 +197,12 @@ img {
 ul {
     color: #084b81;
     font-weight: bold;
+}
+
+.atag:link {
+    color: #0074cd;
+}
+
+.atag:visited {
+    color: #013866;
 }

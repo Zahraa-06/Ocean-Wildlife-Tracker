@@ -12,7 +12,7 @@ function Index(props) {
                     {
                         sightings.map((sighting) => {
                             return (<li>
-                                • The species is <a href={`/sightings/${sighting.id}?token=${props.token}`}>{sighting.species.name}</a>.<br />
+                                • The species is <a className='atag' href={`/sightings/${sighting.id}?token=${props.token}`}>{sighting.species.name}</a>.<br />
                                 • Located in {sighting.location}.<br />
                                 • Recorded at {sighting.createdAt.toString()}.<br />
                                 • Click here to see the photo {sighting.photoUrl}.<br />
