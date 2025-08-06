@@ -7,8 +7,7 @@ A citizen science application that enables users to log marine animal sightings 
 ## Features 🦈
 
 -  User authentication system (JWT)
--  Interactive map with sighting markers
--  Photo uploads for sightings
+-  Photo links for sightings
 -  Species conservation status tracking
 -  Location validation for sightings
 -  NOAA API integration for species data
@@ -20,8 +19,6 @@ A citizen science application that enables users to log marine animal sightings 
 - Express.js
 - MongoDB (Mongoose ODM)
 - JWT Authentication
-- Artillery
-- Cloudinary (Image storage)
 
 **Frontend:**
 - CSS Styling
@@ -56,14 +53,6 @@ A citizen science application that enables users to log marine animal sightings 
 | GET    | /species        | List all species           | No            |
 | GET    | /species/:id    | Show species details       | No            |
 
-### API Endpoints 
-
-| Method | Endpoint        | Description                | Auth Required |
-|--------|-----------------|----------------------------|---------------|
-| GET    | /api/species    | Get all species data       | No            |
-| POST   | /api/sightings  | Create new sighting        | Yes (JWT)     |
-| GET    | /api/sightings  | Get all sightings data     | No            |
-
 ## Installation 🐬
 
 1. Clone the repository:
@@ -96,18 +85,6 @@ A citizen science application that enables users to log marine animal sightings 
    http://localhost:3000
    ```
 
-## Testing 🐡
-
-To run the test suite:
-```bash
-npm run test
-```
-
-This will execute:
-- Model validation tests
-- API endpoint tests
-- Authentication tests
-
 ## Environment Variables 🦀
 
 The following environment variables are required:
@@ -116,9 +93,6 @@ The following environment variables are required:
 |-------------------------|--------------------------------------|
 | MONGODB_URI             | MongoDB connection string            |
 | JWT_SECRET              | Secret key for JWT tokens            |
-| CLOUDINARY_CLOUD_NAME   | Cloudinary cloud name                |
-| CLOUDINARY_API_KEY      | Cloudinary API key                   |
-| CLOUDINARY_API_SECRET   | Cloudinary API secret                |
 
 ## Contact 🦑
 
