@@ -3,17 +3,22 @@ const Layout = require('../layout/layout')
 
 function Index (props){
     const sightings = props.sightings
+    console.log(props)
     return (
         
          <Layout token={props.token}>
             <div>
-                <h1>Index page</h1> 
+                {props.mySightings ? <h1>My Sightings</h1> : <h1>All Sightings</h1> }
                 <ul>
                 {
                     sightings.map((sighting) => {
-                        return (<li>this is the <a href={`/sightings/${sighting.id}?token=${props.token}`}>{sighting.species.name}</a>
-                        and its location is {sighting.location}. The time stamp is {sighting.timestamp}. This is the photo URL {sighting.photoUrl}.
-                        This is reported by {sighting.reportedBy.name}. Some notes are {sighting.notes}.</li>)
+                        return (<li> 
+                         • The species is <a href={`/sightings/${sighting.id}?token=${props.token}`}>{sighting.species.name}</a><br/>
+                         • Located in {sighting.location}.<br/>
+                         • Recorded at {sighting.createdAt.toString()}.<br/>
+                         • Click here to see the photo {sighting.photoUrl}.<br/>
+                         • This was reported by {sighting.reportedBy.name}.<br/>
+                         • A note: {sighting.notes}.<br/></li>)
                     })
                 }
                 </ul>

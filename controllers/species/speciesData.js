@@ -22,45 +22,45 @@ dataController.getAll = async (req, res, next) => {
     }
 }
 
-dataController.destroy = async (req,res,next) => {
+dataController.destroy = async (req, res, next) => {
     try {
-        await Species.findOneAndDelete({'_id': req.params.id}).then(() => {
+        await Species.findOneAndDelete({ '_id': req.params.id }).then(() => {
             next()
         })
-    } catch(error) {
+    } catch (error) {
         res.status(400).send({ message: error.message })
     }
 }
 
-dataController.update = async (req,res,next) => {
-   
+dataController.update = async (req, res, next) => {
+
     try {
-        res.locals.data.species = await Species.findByIdAndUpdate(req.params.id, req.body, {new: true})
+        res.locals.data.species = await Species.findByIdAndUpdate(req.params.id, req.body, { new: true })
         next()
-    } catch(error) {
+    } catch (error) {
         res.status(400).send({ message: error.message })
     }
 }
 
-dataController.create = async (req,res,next) => {
+dataController.create = async (req, res, next) => {
     try {
         req.body.reportedBy = req.user._id
         console.log()
         res.locals.data.species = await Species.create(req.body)
         next()
-    } catch(error) {
+    } catch (error) {
         res.status(400).send({ message: error.message })
     }
 }
 
-dataController.show = async (req,res,next) => {
+dataController.show = async (req, res, next) => {
     try {
         res.locals.data.species = await Species.findById(req.params.id)
-        if(!res.locals.data.species){
-            throw new error (`Could not locate a species with the id ${req.params.id}`)
+        if (!res.locals.data.species) {
+            throw new error(`Could not locate a species with the id ${req.params.id}`)
         }
         next()
-    } catch(error) {
+    } catch (error) {
         res.status(400).send({ message: error.message })
     }
 }

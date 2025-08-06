@@ -7,6 +7,6 @@ const sightingSchema = new mongoose.Schema({
   reportedBy: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
   notes: String,
   verified: { type: Boolean, default: false }
-}, {timestamps: true});
+}, { timestamps: true });
 
-module.exports = mongoose.model('Sighting',sightingSchema)
+module.exports = mongoose.model('Sighting', sightingSchema)

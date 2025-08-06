@@ -2,14 +2,14 @@ const express = require('express')
 const router = express.Router()
 const viewController = require('./speciesViews.js')
 const dataController = require('./speciesData.js')
-const sightingsView = require ('../sightings/sightingsViews.js')//
+const sightingsView = require('../sightings/sightingsViews.js')//
 const authDataController = require('../auth/authData.js')
 
 // Index
 router.get('/', authDataController.auth, dataController.getAll, viewController.index)
 
 // New
-router.get('/new', authDataController.auth, viewController.newView )
+router.get('/new', authDataController.auth, viewController.newView)
 
 // Delete
 router.delete('/:id', authDataController.auth, dataController.destroy, viewController.redirectHome)

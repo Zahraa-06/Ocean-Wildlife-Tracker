@@ -1,3 +1,4 @@
+/* Reset and Global */
 * {
     margin: 0;
     padding: 0;
@@ -5,9 +6,6 @@
 }
 
 body {
-    /* display: flex; */
-    justify-content: center;
-    align-items: center;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     color: #2c3e50;
@@ -17,6 +15,7 @@ body {
     padding: 20px;
 }
 
+/* Container Wrapper */
 .container {
     max-width: 800px;
     margin: 0 auto;
@@ -26,6 +25,7 @@ body {
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 }
 
+/* Headings */
 h1 {
     font-size: 2.5rem;
     text-align: center;
@@ -33,88 +33,50 @@ h1 {
     color: #5f9fd3;
 }
 
+/* Input Fields */
 input[type="text"],
 input[type="email"],
-input[type="password"] {
+input[type="password"],
+select,
+textarea {
     width: 100%;
     padding: 12px 16px;
     border: 2px solid #e0e0e0;
     border-radius: 8px;
     font-size: 1rem;
+    margin-bottom: 1rem;
     transition: border-color 0.3s ease;
 }
 
 input[type="text"]:focus,
 input[type="email"]:focus,
-input[type="password"]:focus {
+input[type="password"]:focus,
+select:focus,
+textarea:focus {
     outline: none;
     border-color: #5f9fd3;
 }
 
+/* Checkbox */
 input[type="checkbox"] {
     margin-right: 0.5rem;
     transform: scale(1.2);
 }
 
-.click {
-   background-color: rgb(245, 245, 245);
-   display: inline-block;
-   padding: 12px 24px;
-   border: none;
-   border-radius: 8px;
-   font-size: 1rem;
-   color: #5f9fd3;
-   font-weight: 600;
-   text-decoration: none;
-   cursor: pointer;
-   margin: 0.5rem;
-   transition: all 0.3s ease;
-}
-
-input[type="submit"], button, #species-select{
-       background-color: rgb(245, 245, 245);
-   display: inline-block;
-   padding: 12px 24px;
-   border: none;
-   border-radius: 8px;
-   font-size: 1rem;
-   color: #5f9fd3;
-   font-weight: 600;
-   text-decoration: none;
-   cursor: pointer;
-   margin: 0.5rem;
-   transition: all 0.3s ease;
-}
-
-
-/* .headerNav {
-    display: flex;
-    justify-content: space-between;
-}
-
-.headerNav a {
-    text-decoration: none;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 1.2rem;
-}
-
-.headerNav a:hover {
-    text-decoration: underline;
-} */
-
+/* Navigation Bar */
 .headerNav {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 1rem;
-    background-color: rgba(255, 255, 255, 0.85); /* semi-transparent to match container */
+    background-color: rgba(255, 255, 255, 0.85);
     padding: 1rem 2rem;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     margin-bottom: 2rem;
 }
 
-.headerNav a,
+.headerNav button,
 .headerNav input[type="submit"] {
     background-color: rgb(245, 245, 245);
     display: inline-block;
@@ -126,10 +88,27 @@ input[type="submit"], button, #species-select{
     font-weight: 600;
     text-decoration: none;
     cursor: pointer;
+    margin: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.headerNav a {
+    background-color: rgb(245, 245, 245);
+    display: inline-block;
+    padding: 8px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #5f9fd3;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    margin: 0.5rem;
     transition: all 0.3s ease;
 }
 
 .headerNav a:hover,
+.headerNav button:hover,
 .headerNav input[type="submit"]:hover {
     background-color: #5f9fd3;
     color: #ffffff;
@@ -141,23 +120,77 @@ input[type="submit"], button, #species-select{
     margin: 0;
 }
 
-/* Make the logout button match the other nav links */
-.logout-btn {
-background-color: rgb(245, 245, 245);
-   display: inline-block;
-   padding: 15px;
-   border: none;
-   border-radius: 8px;
-   font-size: 1rem;
-   color: #5f9fd3;
-   font-weight: 600;
-   text-decoration: none;
-   cursor: pointer;
-   margin: 0.5rem;
-   transition: all 0.3s ease;
+/* Global Click Class for Reuse */
+input[type="submit"],
+button {
+    background-color: rgb(245, 245, 245);
+    display: inline-block;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #5f9fd3;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    margin: 0.5rem;
+    transition: all 0.3s ease;
 }
 
-.logout-btn:hover {
-  background-color: #5f9fd3;
-  color: white;
+.click:hover,
+input[type="submit"]:hover,
+button:hover {
+    background-color: #5f9fd3;
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Form layout */
+form {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+
+/* Lists */
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 1rem 0;
+}
+
+li {
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+}
+
+/* Links inside paragraphs */
+p a {
+    color: #5f9fd3;
+    text-decoration: underline;
+}
+
+/* Submit/Delete/Edit buttons spacing */
+form input[type="submit"],
+form button {
+    margin-top: 1rem;
+}
+
+/* Image Styling (if used) */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 1rem;
+}
+
+.btn {
+    display: grid;
+    grid-template-columns: repeat(2, 300px);
+    justify-content: space-between;
+    align-items: center;
+}
+
+.delete-btn {
+    margin-left: 53px;
+    margin-bottom: 24px;
 }
