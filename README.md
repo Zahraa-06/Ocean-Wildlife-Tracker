@@ -2,16 +2,15 @@
 
 A citizen science application that enables users to log marine animal sightings to support conservation efforts. Built with Express.js, and MongoDB.
 
-![App Screenshot](/public/images/screenshot.png)
+![App Screenshot](/public/Project2.png)
 
 ## Features 🦈
 
 -  User authentication system (JWT)
--  Interactive map with sighting markers
--  Photo uploads for sightings
+-  Photo links for sightings
 -  Species conservation status tracking
 -  Location validation for sightings
--  NOAA API integration for species data
+-  Seed file for species data
 
 ## Tech Stack 🐢
 
@@ -20,8 +19,6 @@ A citizen science application that enables users to log marine animal sightings 
 - Express.js
 - MongoDB (Mongoose ODM)
 - JWT Authentication
-- Artillery
-- Cloudinary (Image storage)
 
 **Frontend:**
 - CSS Styling
@@ -56,14 +53,6 @@ A citizen science application that enables users to log marine animal sightings 
 | GET    | /species        | List all species           | No            |
 | GET    | /species/:id    | Show species details       | No            |
 
-### API Endpoints 
-
-| Method | Endpoint        | Description                | Auth Required |
-|--------|-----------------|----------------------------|---------------|
-| GET    | /api/species    | Get all species data       | No            |
-| POST   | /api/sightings  | Create new sighting        | Yes (JWT)     |
-| GET    | /api/sightings  | Get all sightings data     | No            |
-
 ## Installation 🐬
 
 1. Clone the repository:
@@ -81,9 +70,6 @@ A citizen science application that enables users to log marine animal sightings 
    ```
    MONGODB_URI=your_mongodb_connection_string
    JWT_SECRET=your_jwt_secret_key
-   CLOUDINARY_CLOUD_NAME=your_cloudinary_name
-   CLOUDINARY_API_KEY=your_cloudinary_key
-   CLOUDINARY_API_SECRET=your_cloudinary_secret
    ```
 
 4. Start the development server:
@@ -96,18 +82,6 @@ A citizen science application that enables users to log marine animal sightings 
    http://localhost:3000
    ```
 
-## Testing 🐡
-
-To run the test suite:
-```bash
-npm run test
-```
-
-This will execute:
-- Model validation tests
-- API endpoint tests
-- Authentication tests
-
 ## Environment Variables 🦀
 
 The following environment variables are required:
@@ -116,12 +90,9 @@ The following environment variables are required:
 |-------------------------|--------------------------------------|
 | MONGODB_URI             | MongoDB connection string            |
 | JWT_SECRET              | Secret key for JWT tokens            |
-| CLOUDINARY_CLOUD_NAME   | Cloudinary cloud name                |
-| CLOUDINARY_API_KEY      | Cloudinary API key                   |
-| CLOUDINARY_API_SECRET   | Cloudinary API secret                |
 
 ## Contact 🦑
 
-Project Maintainer - [Your Name](mailto:your.email@example.com)
+Project Maintainer Email - [Zahraa Busuhail](mailto:zahraasuhail2006@gmail.com)
 
-Project Link: [https://github.com/yourusername/marine-wildlife-tracker](https://github.com/yourusername/marine-wildlife-tracker)
+Project Link: [https://github.com/ZahraaBusuhail/ocean-wildlife-tracker](https://github.com/Zahraa-06/Ocean-Wildlife-Tracker)
